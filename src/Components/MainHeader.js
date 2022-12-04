@@ -1,12 +1,16 @@
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from "../static/vistalogo.png"
 import classes from './MainHeader.module.css';
-
+import {useHistory} from "react-router-dom"
 const MainHeader = () => {
+  const history = useHistory()
+  const handle = ()=> {
+    history.push("/")
+  }
   return (
     <header className={classes.header}>
       <div className={classes['nav-container']}>
-      <img style={{width:"13vw",height:"5rem"}} src={logo} alt="" />
+      <button onClick={handle}><img style={{width:"13vw",height:"5rem"}} src={logo} alt="" /></button>
       <div className={classes['link-container']}>
       <nav>
         <ul>
